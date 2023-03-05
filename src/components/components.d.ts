@@ -1,5 +1,5 @@
 
-export interface TimerInfo{
+export interface ITimerInfo{
     seconds: number,
     minutes: number,
     hours: number,

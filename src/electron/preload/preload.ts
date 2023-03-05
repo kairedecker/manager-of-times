@@ -18,4 +18,15 @@ contextBridge.exposeInMainWorld('versions', {
   chrome: () => process.versions.chrome,
   electron: () => process.versions.electron,
   // we can also expose variables, not just functions
+});
+
+contextBridge.exposeInMainWorld('api',{
+  test: () => ipcRenderer.invoke('test')
+});
+
+// Just testing context bridge exposure
+contextBridge.exposeInMainWorld('test', {
+  test: () => console.log("Yey")
 })
+
+

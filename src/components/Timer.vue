@@ -18,7 +18,7 @@
     import { reactive, ref, watch } from "vue";
     import { TimerModes } from '../views/views_enums';
     import type { Ref } from 'vue'
-    import { TimerInfo } from "./components_interfaces";
+    import { ITimerInfo } from "./components";
 
 
     // Ohne "any" gings net... Ist eigentlich "Object" - da hat TS aber kein Bock drauf
@@ -56,12 +56,12 @@
     );
 
     const emit = defineEmits<{
-        (e: 'getTime', time: TimerInfo): void
+        (e: 'getTime', time: ITimerInfo): void
     }>();
 
     watch(() => (props.getTime), (getTime) => {
         if(getTime){
-            let timerInfo: TimerInfo = {
+            let timerInfo: ITimerInfo = {
                 seconds: seconds.value,
                 minutes: minutes.value,
                 hours: hours.value,

@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "outDir": "dist/electron"
   },
-  "include": ["src/electron/**/*"],
+  "include": ["src/electron/**/*", "src/renderer.d.ts"],
   "references": [{
     "path": "./tsconfig.node.json"
   }]

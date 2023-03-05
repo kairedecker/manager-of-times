@@ -3,9 +3,11 @@ import { app, BrowserWindow } from 'electron';
 
 const isDev = process.env.npm_lifecycle_event === "app:dev" ? true : false;
 
+let mainWindow: BrowserWindow;
+
 function createWindow() {
     // Create the browser window.
-    const mainWindow = new BrowserWindow({
+    mainWindow = new BrowserWindow({
         minHeight: 500,
         minWidth: 600,
         width: 800,
@@ -29,7 +31,15 @@ function createWindow() {
     //     join(__dirname, '../../index.html')
     // );
 
+    /*
+    mainWindow.webContents.executeJavaScript('localStorage.getItem("isDark")')
+        .then(isDark => {
+            console.log(`Localstorage: ${isDark}`);
+        });
+    */
 }
+
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

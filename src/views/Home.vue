@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <p>{{ test }}</p>
     <h3>Übersicht letzte 7 Tage:</h3>
     <p>Chart, Tabelle</p>
     <p>Soll-/Ist-Vergleich</p>
@@ -11,8 +10,7 @@
 
 <script setup lang="ts">
 
-const test = "test";
-//api.test();
+window.test.test()
 
 </script>
 

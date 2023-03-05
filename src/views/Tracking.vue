@@ -22,7 +22,7 @@
           v-model="workType"
           :options="listOfWorkTypes"
           label="name"
-          :reduce="(x: WorkTypesSelect) => x.type"
+          :reduce="(x: IWorkTypesSelect) => x.type"
           :clearable="false"
         ></v-select>
       </div>
@@ -59,8 +59,8 @@ import 'vue-select/dist/vue-select.css';
 import { PlayIcon } from "@heroicons/vue/24/solid"
 import type { Ref } from 'vue'
 import { TimerModes } from '../views/views_enums';
-import { WorkTypesSelect } from '../views/views_interfaces';
-import { TimerInfo } from "../components/components_interfaces";
+import { IWorkTypesSelect } from './views';
+import { ITimerInfo } from "../components/components";
 
 // Manual Handling
 
@@ -146,7 +146,7 @@ function saveAuto(): void{
   }
 }
 
-function gotTime(timerInfo: TimerInfo): void{
+function gotTime(timerInfo: ITimerInfo): void{
   console.log(timerInfo);
   getTime.value = false;
 }
