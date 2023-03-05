@@ -1,18 +1,18 @@
 import { join } from 'path';
-import {
-    app,
-    BrowserWindow
-} from 'electron';
+import { app, BrowserWindow } from 'electron';
 
 const isDev = process.env.npm_lifecycle_event === "app:dev" ? true : false;
 
 function createWindow() {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
+        minHeight: 500,
+        minWidth: 600,
         width: 800,
         height: 600,
+        title: 'Manager of times',
         webPreferences: {
-            preload: join(__dirname, '../preload/preload.js'),
+            preload: join(__dirname, '../preload/preload.js')
         },
     });
 
@@ -28,6 +28,7 @@ function createWindow() {
     //     'http://localhost:3000' :
     //     join(__dirname, '../../index.html')
     // );
+
 }
 
 // This method will be called when Electron has finished
