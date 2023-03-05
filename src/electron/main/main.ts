@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 
 const isDev = process.env.npm_lifecycle_event === "app:dev" ? true : false;
 
@@ -61,3 +61,10 @@ app.on('window-all-closed', () => {
         app.quit();
     }
 });
+
+function onTest():void{
+    console.log("Here we are")
+}
+
+
+ipcMain.on('on-test', onTest)

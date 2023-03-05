@@ -10,7 +10,9 @@
 
 <script setup lang="ts">
 
-window.test.test()
+window.test.test();
+
+window.api.onTest();
 
 </script>
 

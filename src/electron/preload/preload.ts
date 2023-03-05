@@ -21,7 +21,7 @@ contextBridge.exposeInMainWorld('versions', {
 });
 
 contextBridge.exposeInMainWorld('api',{
-  test: () => ipcRenderer.invoke('test')
+  onTest: () => ipcRenderer.send('on-test')
 });
 
 // Just testing context bridge exposure

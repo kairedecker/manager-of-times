@@ -1,5 +1,5 @@
 export interface IApi{
-    test: () => Promise<void>,
+    onTest: () => void,
 }
 
 export interface ITest{
